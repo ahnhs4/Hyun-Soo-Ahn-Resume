@@ -405,6 +405,377 @@ function closeModal(modalId) {
 }
 </script>
 </body>
+</html>.hero-sub { margin-top: 18px; font-size: 15px; font-weight: 600; color: var(--muted); letter-spacing: -0.01em; }
+
+.hero-image-container { width: 320px; height: 420px; border-radius: 24px; overflow: hidden; background: #e5e7eb; box-shadow: 0 20px 40px rgba(0,0,0,0.08); transition: transform 0.5s; }
+.hero-image-container:hover { transform: translateY(-5px); }
+.hero-image-container img { width: 100%; height: 100%; object-fit: cover; }
+
+.hero-copy-text { color: var(--muted); font-size: 16px; line-height: 1.7; font-weight: 400; margin-bottom: 25px; }
+.linkedin-btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: #0A66C2; color: #fff !important; border-radius: 8px; font-size: 14px; font-weight: 600; transition: background 0.2s, transform 0.2s; }
+.linkedin-btn:hover { background: #004182; transform: translateY(-2px); }
+
+.scroll { position: absolute; bottom: 28px; left: 6vw; font-size: 11px; color: var(--muted); letter-spacing: .16em; text-transform: uppercase; font-weight: 600; }
+
+section { padding: 100px 6vw; border-top: 1px solid var(--line); }
+.wrap { width: min(var(--max), 100%); margin: auto; }
+.section-head { margin-bottom: 40px; }
+.section-num { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: .15em; }
+
+.lang-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.lang { background: var(--card); padding: 55px 35px; min-height: 230px; border-radius: 16px; border: 1px solid var(--line); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); transition: transform 0.4s cubic-bezier(.2,.8,.2,1), box-shadow 0.4s; }
+.lang:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+.lang .big { font-size: clamp(42px, 5vw, 70px); font-weight: 800; letter-spacing: -.06em; color: var(--accent); }
+.lang p { color: var(--muted); margin: 20px 0 0; font-weight: 500; }
+
+.timeline { display: grid; gap: 0; }
+.item { display: grid; grid-template-columns: 22% 1fr; gap: 30px; padding: 45px 0; border-bottom: 1px solid var(--line); }
+.item:last-child { border-bottom: 0; }
+.date { color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: 0.05em; }
+.role { font-size: 24px; font-weight: 700; letter-spacing: -.03em; }
+.org { color: var(--accent); font-size: 14px; font-weight: 600; margin-top: 5px; }
+.desc { color: var(--muted); line-height: 1.7; max-width: 760px; margin-top: 15px; font-size: 15px; }
+
+.projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.project { background: var(--card); padding: 48px; min-height: 340px; border-radius: 16px; border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.4s, box-shadow 0.4s; cursor: pointer; }
+.project:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); background: #F9FAFB; }
+.project h3 { font-size: 28px; letter-spacing: -.04em; margin: 0; line-height: 1.2; }
+.project .tag { color: var(--accent); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .15em; margin-bottom: 15px; }
+
+.brands { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.brand { background: var(--card); height: 350px; border-radius: 16px; border: 1px solid var(--line); display: flex; flex-direction: column; overflow: hidden; transition: transform 0.4s, box-shadow 0.4s; cursor: pointer; }
+.brand:hover { transform: translateY(-5px); box-shadow: 0 15px 25px -5px rgba(0,0,0,0.1); }
+.brand-img-wrap { height: 70%; width: 100%; background: #F3F4F6; display: flex; align-items: center; justify-content: center; padding: 30px; }
+.brand-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.4s; }
+.brand:hover .brand-img-wrap img { transform: scale(1.05); }
+.brand-text-wrap { height: 30%; width: 100%; display: flex; flex-direction: column; justify-content: center; padding: 0 25px; background: var(--card); border-top: 1px solid var(--line); }
+.brand-name { font-size: 20px; font-weight: 800; letter-spacing: -.04em; margin: 0; color: var(--fg); }
+.brand small { color: var(--muted); margin-top: 4px; font-weight: 500; font-size: 13px; }
+
+.cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.cert { background: var(--card); min-height: 240px; padding: 35px; border-radius: 16px; border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s; cursor: pointer; }
+.cert:hover { background: #F3F4F6; transform: translateY(-6px); box-shadow: 0 15px 20px -5px rgba(0,0,0,0.08); }
+.cert-index { font-size: 13px; font-weight: 600; color: var(--muted); }
+.cert h3 { font-size: clamp(22px, 2.5vw, 32px); letter-spacing: -.04em; line-height: 1.1; margin: 25px 0 10px; }
+.cert p { color: var(--accent); margin: 0; font-size: 13px; font-weight: 600; }
+
+footer { padding: 80px 6vw 110px; border-top: 1px solid var(--line); background: #FFFFFF; }
+footer .wrap { display: flex; justify-content: space-between; gap: 30px; align-items: end; }
+footer h2 { font-size: clamp(40px, 7vw, 90px); letter-spacing: -.04em; margin: 0; }
+
+.reveal { opacity: 0; transform: translateY(45px); transition: opacity 0.9s ease, transform 1s cubic-bezier(.2,.8,.2,1); }
+.reveal.show { opacity: 1; transform: none; }
+
+.lang-switch { position: fixed; right: 4vw; bottom: 25px; z-index: 30; border: 1px solid var(--line); border-radius: 999px; padding: 10px 18px; background: var(--card); color: var(--fg); font-size: 13px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.2s; }
+.lang-switch:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* 모달 공통 스타일 */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(17, 24, 39, 0.85); backdrop-filter: blur(8px); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
+.modal.show-modal { display: flex; opacity: 1; }
+.close-modal { position: absolute; top: 20px; right: 25px; color: #999; font-size: 35px; font-weight: 300; cursor: pointer; z-index: 10; transition: color 0.2s; line-height: 1; }
+.close-modal:hover { color: var(--fg); }
+
+/* 자격증/프로젝트 이미지 팝업 */
+.modal-content-img { position: relative; max-width: 90%; max-height: 90%; }
+.modal-content-img img { width: auto; max-width: 100%; max-height: 90vh; border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+.modal-content-img .close-modal { top: -40px; right: 0; color: white; }
+
+/* 실무 경험 상세설명 팝업 */
+.modal-content-brand { position: relative; background: var(--card); width: 90%; max-width: 700px; max-height: 85vh; border-radius: 20px; overflow-y: auto; overflow-x: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3); }
+.modal-content-brand::-webkit-scrollbar { width: 8px; }
+.modal-content-brand::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+.bm-hero { width: 100%; height: 280px; background: #F3F4F6; display: flex; align-items: center; justify-content: center; padding: 40px; border-bottom: 1px solid var(--line); }
+.bm-hero img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.bm-body { padding: 45px; }
+.bm-body h2 { font-size: clamp(28px, 4vw, 36px); letter-spacing: -.04em; margin: 0 0 15px; }
+.bm-desc { color: var(--muted); font-size: 16px; line-height: 1.7; margin-bottom: 35px; }
+.bm-role { background: var(--bg); padding: 30px; border-radius: 12px; margin-bottom: 35px; border: 1px solid var(--line); }
+.bm-role h4 { font-size: 18px; color: var(--accent); margin: 0 0 12px 0; font-weight: 700; }
+.bm-role p { color: var(--fg); margin: 0; font-size: 15px; line-height: 1.6; }
+.bm-link { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; background: var(--fg); color: #fff; border-radius: 8px; font-weight: 600; font-size: 14px; transition: background 0.2s; }
+.bm-link:hover { background: var(--accent); color: #fff; }
+
+/* 체계적인 다국어(한국어/영어) 제어 시스템 */
+[data-ko] { display: none !important; }
+body.ko [data-en] { display: none !important; }
+body.ko span[data-ko] { display: inline !important; }
+body.ko div[data-ko], body.ko h1[data-ko], body.ko p[data-ko] { display: block !important; }
+
+@media(max-width: 900px){
+  nav { padding: 18px 5vw; }
+  .nav-links { display: none; }
+  .hero-inner { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 30px; }
+  .hero-text { min-height: auto; align-items: center; }
+  .hero-image-container { order: -1; width: 260px; height: 340px; }
+  .hero-copy { min-height: auto; align-items: center; text-align: center; margin-top: 15px; }
+  section { padding: 80px 5vw; }
+  .lang-grid, .projects, .brands, .cert-grid { grid-template-columns: 1fr; }
+  .item { grid-template-columns: 1fr; gap: 12px; }
+  .cert { min-height: 180px; }
+  footer .wrap { flex-direction: column; align-items: flex-start; }
+  footer div[style*="text-align:right"] { text-align: left !important; margin-top: 20px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="#top">HA.</a>
+  <div class="nav-links">
+    <a href="#roadmap"><span data-en>Roadmap</span><span data-ko>로드맵</span></a>
+    <a href="#projects"><span data-en>Projects</span><span data-ko>프로젝트</span></a>
+    <a href="#languages"><span data-en>Languages</span><span data-ko>외국어 역량</span></a>
+    <a href="#practical-experience"><span data-en>Practical Exp.</span><span data-ko>실무 경험</span></a>
+    <a href="#certifications"><span data-en>Certifications</span><span data-ko>자격증</span></a>
+  </div>
+</nav>
+
+<button class="lang-switch" onclick="document.body.classList.toggle('ko');this.textContent=document.body.classList.contains('ko')?'EN':'한국어'">한국어</button>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-inner reveal">
+    <div class="hero-text">
+      <div class="eyebrow">Finance · Asset Management · Strategy</div>
+      <h1 data-en>HYUNSOO<br>AHN</h1>
+      <h1 data-ko>안현수</h1>
+      <div class="hero-sub">
+        <span data-en>Yonsei Univ. BBA · GPA 3.97 / 4.3</span>
+        <span data-ko>연세대학교 경영학과 · GPA 3.97 / 4.3</span>
+      </div>
+    </div>
+    <div class="hero-image-container">
+      <img src="profile.jpg" alt="Hyunsoo Ahn Portrait">
+    </div>
+    <div class="hero-copy">
+      <div class="hero-copy-text">
+        <span data-en>Business Administration student at Yonsei University with a deep interest in the financial sector. Building practical expertise across macroeconomic analysis, portfolio strategy, and asset management to navigate and interpret global financial markets.</span>
+        <span data-ko>연세대학교에서 경영학을 전공하며 금융권과 자산 운용에 깊은 관심을 두고 있습니다. 거시경제 분석, 포트폴리오 전략 수립 및 자산 관리 실무 경험을 바탕으로 글로벌 금융 시장에 대한 인사이트를 넓혀가고 있습니다.</span>
+      </div>
+      <a href="https://www.linkedin.com/in/hyunsoo-ahn-4a975a296" target="_blank" class="linkedin-btn">
+        <svg style="margin-right:8px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+  <div class="scroll">Scroll to explore ↓</div>
+</section>
+
+<section id="roadmap">
+<div class="wrap reveal">
+  <div class="section-head">
+    <div class="section-num">
+      <span data-en>01 / ROADMAP</span><span data-ko>01 / 로드맵</span>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="item"><div class="date">SEP 2026 —</div><div><div class="role"><span data-en>Investment Club Member</span><span data-ko>투자동아리 부원</span></div><div class="org">연끌 (Yeon-kkeul)</div><div class="desc" data-en>Active member of the Yonsei University Investment Club 'Yeon-kkeul', affiliated with the nationwide University Investment Club (UIC) network.</div><div class="desc" data-ko>전국 대학생 투자동아리 UIC 산하 연세대학교 투자동아리 활동</div></div></div>
+    <div class="item"><div class="date">AUG 2026 —</div><div><div class="role">Co-Founder & E-Commerce Manager</div><div class="org">kuration</div><div class="desc" data-en>Co-founded a cross-border e-commerce platform for Korean fashion. Established Shopify infrastructure, drafted partnership agreements, and integrated international payment gateways.</div><div class="desc" data-ko>한국 패션 브랜드를 위한 크로스보더 이커머스 플랫폼을 창업했습니다. Shopify 인프라 구축, 파트너십 계약 체결 및 글로벌 결제 시스템 연동 등 비즈니스 전반을 총괄했습니다.</div></div></div>
+    <div class="item"><div class="date">MAY 2026 —</div><div><div class="role">Head of Asset Management</div><div class="org">Waving Hands</div><div class="desc" data-en>Established the foundational asset management framework with an initial capital of KRW 5M. Developed investment policies prioritizing strict NGO compliance and liquidity.</div><div class="desc" data-ko>초기 자본금 500만 원을 운용하며 기초 자산 관리 프레임워크를 확립했습니다. 조직의 핵심 활동을 위한 유동성 확보 및 NGO 규정 준수를 최우선으로 하는 투자 정책을 수립했습니다.</div></div></div>
+    <div class="item"><div class="date">JUN — SEP 2024</div><div><div class="role">English Contents Manager Intern</div><div class="org">ZEROXFLOW</div><div class="desc" data-en>Executed English translation and QA for 200+ video assets for major clients including Disney. Represented the company at major expos, conducting direct sales to drive customer acquisition.</div><div class="desc" data-ko>디즈니 등 주요 클라이언트의 200개 이상 영상 에셋 번역 및 QA를 완수했습니다. 대형 박람회 현장에서 제품 피칭 및 대면 세일즈를 진행하며 고객 유치를 이끌었습니다.</div></div></div>
+    <div class="item"><div class="date">AUG 2023 — AUG 2024</div><div><div class="role">Executive Board Member, Planning</div><div class="org">Yonsei International Korean Union (YIKU)</div><div class="desc" data-en>Planned and executed 7 major cultural and networking events, overseeing end-to-end logistics. Managed and fostered engagement for a student community of 115 active members.</div><div class="desc" data-ko>7개의 대규모 문화 및 네트워킹 행사를 기획 및 총괄했으며, 115명 규모의 학생 커뮤니티를 성공적으로 관리하고 활성화했습니다.</div></div></div>
+  </div>
+</div>
+</section>
+
+<section id="projects">
+<div class="wrap reveal">
+  <div class="section-head">
+    <div class="section-num">
+      <span data-en>02 / PROJECTS</span><span data-ko>02 / 프로젝트</span>
+    </div>
+  </div>
+  <div class="projects">
+    <div class="project" onclick="openCertModal('db-gaps2.jpg')">
+      <div class="tag">Investment · 2026</div><h3>12th DB GAPS<br>Simulated Investment Competition</h3><p class="desc" data-en>Team Leader. Achieved a top 5% finish (Ranked 50th out of 933 teams) by developing a top-down asset allocation strategy using domestic ETFs. Dynamically adjusted weightings across equity and fixed-income ETFs to manage macro volatility and optimize risk-adjusted returns.</p><p class="desc" data-ko>팀장. 국내 ETF를 활용한 탑다운 자산 배분 전략으로 상위 5%(933팀 중 50위)의 성과를 거두었습니다. 거시경제 변동성에 대응하여 섹터 및 채권 ETF 비중을 동적으로 조절해 위험 조정 수익률을 최적화했습니다.</p>
+    </div>
+    <div class="project" onclick="openCertModal('db-gaps.jpg')">
+      <div class="tag">Investment · 2025</div><h3>11th DB GAPS<br>Simulated Investment Competition</h3><p class="desc" data-en>Team Leader. Built a top-down macro investment strategy by identifying how global weather, political, and economic events could ripple through specific supply chains.</p><p class="desc" data-ko>팀장으로서 탑다운(Top-down) 방식의 거시적 투자 전략을 설계했습니다. 기후, 정치, 경제적 이슈가 글로벌 공급망에 미치는 파급 효과를 분석하여 성장 주도주를 발굴하는 데 주력했습니다.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="languages">
+<div class="wrap reveal">
+  <div class="section-head">
+    <div class="section-num">
+      <span data-en>03 / LANGUAGES</span><span data-ko>03 / 외국어 역량</span>
+    </div>
+  </div>
+  <div class="lang-grid">
+    <div class="lang"><div class="big">한국어</div><p>Native / Korean</p></div>
+    <div class="lang"><div class="big">English</div><p>TOEIC 930 · TOEFL iBT 108</p></div>
+    <div class="lang"><div class="big">中文</div><p>HSK 6</p></div>
+  </div>
+</div>
+</section>
+
+<section id="practical-experience">
+<div class="wrap reveal">
+  <div class="section-head">
+    <div class="section-num">
+      <span data-en>04 / PRACTICAL EXPERIENCE</span><span data-ko>04 / 실무 경험</span>
+    </div>
+  </div>
+  <div class="brands">
+    <div class="brand" onclick="openBrandModal('waving-hands')">
+      <div class="brand-img-wrap"><img src="waving-hands.png" alt="Waving Hands Logo"></div>
+      <div class="brand-text-wrap">
+        <div class="brand-name">Waving Hands</div>
+        <small>Asset Management · NGO Projects</small>
+      </div>
+    </div>
+    <div class="brand" onclick="openBrandModal('kuration')">
+      <div class="brand-img-wrap"><img src="kuration-logo.png" alt="kuration Logo"></div>
+      <div class="brand-text-wrap">
+        <div class="brand-name">kuration</div>
+        <small>Cross-Border E-Commerce · Korean Fashion</small>
+      </div>
+    </div>
+    <div class="brand" onclick="openBrandModal('zeroxflow')">
+      <div class="brand-img-wrap"><img src="zeroxflow-logo.png" alt="ZEROXFLOW Logo"></div>
+      <div class="brand-text-wrap">
+        <div class="brand-name">ZEROXFLOW</div>
+        <small>Global Content · English Localization</small>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="certifications">
+<div class="wrap reveal">
+  <div class="section-head">
+    <div class="section-num">
+      <span data-en>05 / CERTIFICATIONS</span><span data-ko>05 / 자격증</span>
+    </div>
+  </div>
+  <div class="cert-grid">
+    <div class="cert" onclick="openCertModal('openai-cert1.jpg')">
+      <span class="cert-index">01</span><div><h3>Agents and<br>Workflows</h3><p>OpenAI · AUG 2026</p></div>
+    </div>
+    <div class="cert" onclick="openCertModal('openai-cert2.jpg')">
+      <span class="cert-index">02</span><div><h3>Applied AI<br>Foundations</h3><p>OpenAI · AUG 2026</p></div>
+    </div>
+    <div class="cert" onclick="openCertModal('openai-cert3.jpg')">
+      <span class="cert-index">03</span><div><h3>AI<br>Foundations</h3><p>OpenAI · AUG 2026</p></div>
+    </div>
+    <div class="cert" onclick="openCertModal('hp-life.jpg')">
+      <span class="cert-index">04</span><div><h3>HP Social Media<br>Marketing</h3><p>HP LIFE · JUL 2021</p></div>
+    </div>
+    <div class="cert" onclick="openCertModal('mini-mba.jpg')">
+      <span class="cert-index">05</span><div><h3>MINI<br>MBA</h3><p>IBMI · JUN 2021</p></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+  <div><div class="eyebrow">Hyunsoo Ahn</div><h2 data-en>Let's connect.</h2><h2 data-ko>함께 이야기 나눠요.</h2></div>
+  <div style="text-align:right;color:var(--muted);font-size:14px;font-weight:500;">Seoul, Republic of Korea<br>ahnhs4@gmail.com</div>
+</div>
+</footer>
+</main>
+
+<!-- 자격증 및 상장 팝업 모달 -->
+<div id="certModal" class="modal" onclick="closeModal('certModal')">
+  <div class="modal-content-img" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="closeModal('certModal')">&times;</span>
+    <img id="certImage" src="" alt="Document">
+  </div>
+</div>
+
+<!-- 실무 경험 상세설명 팝업 모달 -->
+<div id="brandDetailModal" class="modal" onclick="closeModal('brandDetailModal')">
+  <div class="modal-content-brand" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="closeModal('brandDetailModal')">&times;</span>
+    
+    <div id="modal-waving-hands" class="brand-detail" style="display: none;">
+      <div class="bm-hero"><img src="waving-hands.png" alt="Waving Hands Logo"></div>
+      <div class="bm-body">
+        <h2>Waving Hands</h2>
+        <div class="bm-desc">
+          <span data-en>An NGO project dedicated to building and implementing energy storage systems (ESS) on Deokjeokdo island to foster sustainable energy solutions.</span>
+          <span data-ko>덕적도 내 지속 가능한 친환경 에너지 솔루션을 구축하기 위해 에너지 저장 시스템(ESS)을 기획하고 실행하는 비영리(NGO) 프로젝트입니다.</span>
+        </div>
+        <div class="bm-role">
+          <h4><span data-en>My Role: Head of Asset Management</span><span data-ko>역할: 자산관리 총괄 (Head of Asset Management)</span></h4>
+          <p data-en>Established the foundational asset management framework for the organization, overseeing an initial investment capital of KRW 5 million. Developed the investment policy prioritizing strict compliance with NGO mandates and liquidity for core organizational activities.</p>
+          <p data-ko>조직의 초기 자본금 500만 원을 운용하며 기초 자산 관리 프레임워크를 구축했습니다. 원활한 비영리 프로젝트 진행을 위한 유동성 확보 및 NGO 규정 준수를 최우선으로 하는 투자 정책을 수립했습니다.</p>
+        </div>
+        <a href="#" class="bm-link" target="_blank"><span data-en>Visit Website ↗</span><span data-ko>웹사이트 방문하기 ↗</span></a>
+      </div>
+    </div>
+
+    <div id="modal-kuration" class="brand-detail" style="display: none;">
+      <div class="bm-hero"><img src="kuration-logo.png" alt="kuration Logo"></div>
+      <div class="bm-body">
+        <h2>kuration</h2>
+        <div class="bm-desc">
+          <span data-en>A cross-border e-commerce platform curating high-quality Korean fashion brands and making them accessible to international buyers.</span>
+          <span data-ko>국내의 잠재력 있는 패션 브랜드를 발굴하여 해외 소비자들에게 소개하는 글로벌 크로스보더 이커머스 플랫폼입니다.</span>
+        </div>
+        <div class="bm-role">
+          <h4><span data-en>My Role: Co-Founder & E-Commerce Manager</span><span data-ko>역할: 공동 창업자 & 이커머스 총괄</span></h4>
+          <p data-en>Co-founded a cross-border platform retailing Korean fashion brands. Established a Shopify-linked e-commerce infrastructure, drafted partnership agreements, and integrated cross-border payment gateways to facilitate international transactions.</p>
+          <p data-ko>한국 패션 브랜드를 해외에 소개하는 이커머스 플랫폼을 공동 창업했습니다. Shopify 기반 인프라를 구축하고 파트너십 계약을 체결했으며, 글로벌 결제 시스템을 연동하여 원활한 해외 결제 환경을 조성했습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-zeroxflow" class="brand-detail" style="display: none;">
+      <div class="bm-hero"><img src="zeroxflow-logo.png" alt="ZEROXFLOW Logo"></div>
+      <div class="bm-body">
+        <h2>ZEROXFLOW</h2>
+        <div class="bm-desc">
+          <span data-en>A dynamic startup focused on bridging global gaps through top-tier English content creation and comprehensive localization strategies.</span>
+          <span data-ko>전문적인 영문 콘텐츠 기획과 체계적인 로컬라이제이션(현지화) 전략을 통해 기업의 글로벌 커뮤니케이션 역량을 강화하는 스타트업입니다.</span>
+        </div>
+        <div class="bm-role">
+          <h4><span data-en>My Role: English Contents Manager Intern</span><span data-ko>역할: 영문 콘텐츠 매니저 (인턴)</span></h4>
+          <p data-en>Executed English translation and quality assurance for 200+ video assets, managing high-profile localization projects for clients including Disney. Represented the company at major education expos, pitching products and conducting direct sales.</p>
+          <p data-ko>디즈니 등 주요 클라이언트의 핵심 프로젝트를 담당하여 200개 이상의 영상 에셋 번역 및 QA를 완수했습니다. 또한 주요 교육 박람회에 기업 대표로 참가해 제품 피칭 및 대면 세일즈를 진행했습니다.</p>
+        </div>
+        <a href="https://www.zeroxflow.com/" class="bm-link" target="_blank"><span data-en>Visit Website ↗</span><span data-ko>웹사이트 방문하기 ↗</span></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show') })
+}, { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+function openCertModal(imageSrc) {
+  const modal = document.getElementById('certModal');
+  const modalImg = document.getElementById('certImage');
+  modalImg.src = imageSrc;
+  modal.classList.add('show-modal');
+  document.body.style.overflow = 'hidden'; 
+}
+
+function openBrandModal(brandId) {
+  const modal = document.getElementById('brandDetailModal');
+  document.querySelectorAll('.brand-detail').forEach(el => el.style.display = 'none');
+  document.getElementById('modal-' + brandId).style.display = 'block';
+  modal.classList.add('show-modal');
+  document.body.style.overflow = 'hidden'; 
+}
+
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  modal.classList.remove('show-modal');
+  setTimeout(() => {
+    if(modalId === 'certModal') document.getElementById('certImage').src = "";
+    document.body.style.overflow = 'auto'; 
+  }, 300);
+}
+</script>
+</body>
 </html>
 .hero-image-container { width: 320px; height: 420px; border-radius: 24px; overflow: hidden; background: #e5e7eb; box-shadow: 0 20px 40px rgba(0,0,0,0.08); transition: transform 0.5s; }
 .hero-image-container:hover { transform: translateY(-5px); }
