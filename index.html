@@ -37,4 +37,616 @@ nav { position: fixed; z-index: 20; top: 0; left: 0; right: 0; display: flex; ju
 
 /* ---------- HERO ---------- */
 .hero { min-height: 100svh; display: grid; place-items: center; padding: 120px 6vw 70px; position: relative; }
-.hero-inner { width: min(var(--max), 100%); display: grid;
+.hero-inner { width: min(var(--max), 100%); display: grid; grid-template-columns: 1fr auto 1fr; gap: 4vw; align-items: center; }
+.hero-text { display: flex; flex-direction: column; justify-content: center; min-height: 220px; }
+.hero-copy { max-width: 420px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; min-height: 220px; }
+.eyebrow { color: var(--accent); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .18em; margin-bottom: 24px; }
+h1 { font-size: clamp(54px, 7vw, 120px); line-height: .9; letter-spacing: -.06em; margin: 0; font-weight: 800; }
+.hero-sub { margin-top: 18px; font-size: 15px; font-weight: 600; color: var(--muted); letter-spacing: -0.01em; line-height: 1.6; }
+.hero-image-container { width: 320px; height: 420px; border-radius: 24px; overflow: hidden; background: #e5e7eb; box-shadow: 0 20px 40px rgba(0,0,0,0.08); transition: transform 0.5s; }
+.hero-image-container:hover { transform: translateY(-5px); }
+.hero-image-container img { width: 100%; height: 100%; object-fit: cover; }
+.hero-copy-text { color: var(--muted); font-size: 16px; line-height: 1.75; margin-bottom: 26px; }
+.hero-copy-text strong { color: var(--fg); font-weight: 700; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 22px; border-radius: 8px; font-size: 14px; font-weight: 600; transition: background 0.2s, transform 0.2s, color 0.2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-linkedin { background: #0A66C2; color: #fff !important; }
+.btn-linkedin:hover { background: #004182; }
+.btn-dark { background: var(--fg); color: #fff !important; }
+.btn-dark:hover { background: var(--accent); }
+.scroll { position: absolute; bottom: 28px; left: 6vw; font-size: 11px; color: var(--muted); letter-spacing: .16em; text-transform: uppercase; font-weight: 600; }
+
+/* ---------- SECTIONS ---------- */
+section { padding: 100px 6vw; border-top: 1px solid var(--line); }
+.wrap { width: min(var(--max), 100%); margin: auto; }
+.section-head { margin-bottom: 40px; display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; }
+.section-num { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: .15em; }
+.section-title { font-size: clamp(28px, 3.4vw, 44px); font-weight: 800; letter-spacing: -.04em; margin: 10px 0 0; }
+.section-note { color: var(--muted); font-size: 14px; max-width: 420px; line-height: 1.6; margin: 0; }
+
+/* ---------- AT A GLANCE ---------- */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.stat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 34px 30px; transition: transform 0.4s cubic-bezier(.2,.8,.2,1), box-shadow 0.4s; }
+.stat:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.08); }
+.stat .num { font-size: clamp(36px, 4vw, 54px); font-weight: 800; letter-spacing: -.05em; color: var(--accent); line-height: 1; }
+.stat .num small { font-size: .45em; letter-spacing: -.02em; margin-left: 4px; color: var(--fg); }
+.stat .label { margin-top: 16px; font-size: 15px; font-weight: 700; letter-spacing: -.01em; }
+.stat .sub { margin-top: 6px; font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* ---------- INVESTMENT CARDS ---------- */
+.inv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.inv { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 38px 34px; display: flex; flex-direction: column; transition: transform 0.4s, box-shadow 0.4s; }
+.inv:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.08); }
+.inv.featured { grid-column: 1 / -1; padding: 44px; border-color: #BFDBFE; background: linear-gradient(180deg, #FFFFFF 0%, #F8FBFF 100%); }
+.inv .tag { color: var(--accent); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; margin-bottom: 14px; }
+.inv h3 { font-size: 24px; letter-spacing: -.04em; margin: 0; line-height: 1.2; }
+.inv.featured h3 { font-size: clamp(28px, 3vw, 36px); }
+.inv .meta { margin-top: 8px; font-size: 14px; font-weight: 600; color: var(--muted); }
+.inv .meta b { color: var(--fg); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 20px; }
+.chip { background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 7px 13px; font-size: 12.5px; font-weight: 700; letter-spacing: -.01em; }
+ul.points { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.75; }
+ul.points li { margin-bottom: 8px; padding-left: 2px; }
+ul.points li::marker { color: var(--accent); }
+ul.points strong { color: var(--fg); font-weight: 700; }
+.inv.featured ul.points { columns: 2; column-gap: 48px; }
+.inv.featured ul.points li { break-inside: avoid; }
+.text-btn { margin-top: auto; padding-top: 18px; align-self: flex-start; background: none; border: 0; cursor: pointer; color: var(--accent); font: inherit; font-size: 14px; font-weight: 700; }
+.text-btn:hover { text-decoration: underline; }
+
+/* ---------- BRAND CARDS (Professional) ---------- */
+.brands { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.brand { background: var(--card); border-radius: 16px; border: 1px solid var(--line); display: flex; flex-direction: column; overflow: hidden; transition: transform 0.4s, box-shadow 0.4s; cursor: pointer; text-align: left; padding: 0; font: inherit; color: inherit; }
+.brand:hover { transform: translateY(-5px); box-shadow: 0 15px 25px -5px rgba(0,0,0,0.1); }
+.brand-img-wrap { height: 220px; width: 100%; background: #F3F4F6; display: flex; align-items: center; justify-content: center; padding: 34px; }
+.brand-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.4s; }
+.brand:hover .brand-img-wrap img { transform: scale(1.05); }
+.brand-text-wrap { width: 100%; padding: 26px 30px 30px; border-top: 1px solid var(--line); }
+.brand-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.brand-name { font-size: 22px; font-weight: 800; letter-spacing: -.04em; }
+.brand-date { font-size: 13px; font-weight: 600; color: var(--muted); }
+.brand-role { margin-top: 4px; font-size: 14px; font-weight: 600; color: var(--accent); }
+.brand-line { margin-top: 12px; font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+.brand-more { display: inline-block; margin-top: 14px; font-size: 13px; font-weight: 700; color: var(--fg); }
+
+/* ---------- TIMELINE (Leadership) ---------- */
+.timeline { display: grid; }
+.item { display: grid; grid-template-columns: 22% 1fr; gap: 30px; padding: 40px 0; border-bottom: 1px solid var(--line); }
+.item:first-child { padding-top: 0; }
+.item:last-child { border-bottom: 0; }
+.date { color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: 0.05em; padding-top: 6px; }
+.role { font-size: 24px; font-weight: 700; letter-spacing: -.03em; }
+.org { color: var(--accent); font-size: 14px; font-weight: 600; margin-top: 5px; }
+.desc { color: var(--muted); line-height: 1.7; max-width: 760px; margin-top: 14px; font-size: 15px; }
+
+/* ---------- LANGUAGES ---------- */
+.lang-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.lang { background: var(--card); padding: 50px 35px; min-height: 220px; border-radius: 16px; border: 1px solid var(--line); transition: transform 0.4s cubic-bezier(.2,.8,.2,1), box-shadow 0.4s; }
+.lang:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+.lang .big { font-size: clamp(42px, 5vw, 70px); font-weight: 800; letter-spacing: -.06em; color: var(--accent); }
+.lang .level { margin-top: 18px; font-weight: 700; font-size: 16px; }
+.lang p { color: var(--muted); margin: 6px 0 0; font-weight: 500; font-size: 14px; }
+
+/* ---------- CERTIFICATIONS ---------- */
+.cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.cert { background: var(--card); min-height: 220px; padding: 35px; border-radius: 16px; border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s; cursor: pointer; text-align: left; font: inherit; color: inherit; }
+.cert:hover { background: #F3F4F6; transform: translateY(-6px); box-shadow: 0 15px 20px -5px rgba(0,0,0,0.08); }
+.cert-index { font-size: 13px; font-weight: 600; color: var(--muted); }
+.cert h3 { font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -.04em; line-height: 1.1; margin: 25px 0 10px; }
+.cert p { color: var(--accent); margin: 0; font-size: 13px; font-weight: 600; }
+
+/* ---------- FOOTER ---------- */
+footer { padding: 80px 6vw 110px; border-top: 1px solid var(--line); background: #FFFFFF; }
+footer .wrap { display: flex; justify-content: space-between; gap: 30px; align-items: end; }
+footer h2 { font-size: clamp(40px, 7vw, 90px); letter-spacing: -.04em; margin: 0; }
+.footer-contact { text-align: right; color: var(--muted); font-size: 14px; font-weight: 500; line-height: 1.9; }
+.footer-contact a { color: var(--fg); font-weight: 600; }
+
+.reveal { opacity: 0; transform: translateY(45px); transition: opacity 0.9s ease, transform 1s cubic-bezier(.2,.8,.2,1); }
+.reveal.show { opacity: 1; transform: none; }
+
+.lang-switch { position: fixed; right: 4vw; bottom: 25px; z-index: 30; border: 1px solid var(--line); border-radius: 999px; padding: 10px 18px; background: var(--card); color: var(--fg); font-size: 13px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.2s; }
+.lang-switch:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ---------- MODALS ---------- */
+.modal { display: none; position: fixed; z-index: 1000; inset: 0; background-color: rgba(17, 24, 39, 0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); align-items: center; justify-content: center; }
+.modal.show-modal { display: flex; }
+.close-modal { position: absolute; top: 16px; right: 20px; color: #999; font-size: 35px; font-weight: 300; cursor: pointer; z-index: 10; transition: color 0.2s; line-height: 1; background: none; border: 0; }
+.close-modal:hover { color: var(--fg); }
+.modal-content-img { position: relative; max-width: 90%; max-height: 90%; }
+.modal-content-img img { width: auto; max-width: 100%; max-height: 90vh; border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+.modal-content-img .close-modal { top: -44px; right: 0; color: white; }
+.modal-content-brand { position: relative; background: var(--card); width: 90%; max-width: 720px; max-height: 85vh; border-radius: 20px; overflow-y: auto; overflow-x: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3); }
+.modal-content-brand::-webkit-scrollbar { width: 8px; }
+.modal-content-brand::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+.bm-hero { width: 100%; height: 240px; background: #F3F4F6; display: flex; align-items: center; justify-content: center; padding: 40px; border-bottom: 1px solid var(--line); }
+.bm-hero img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.bm-body { padding: 42px; }
+.bm-body h2 { font-size: clamp(28px, 4vw, 36px); letter-spacing: -.04em; margin: 0 0 6px; }
+.bm-meta { font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 18px; }
+.bm-desc { color: var(--muted); font-size: 15.5px; line-height: 1.7; margin-bottom: 28px; }
+.bm-role { background: var(--bg); padding: 28px 30px; border-radius: 12px; margin-bottom: 28px; border: 1px solid var(--line); }
+.bm-role h4 { font-size: 17px; color: var(--accent); margin: 0 0 14px 0; font-weight: 700; }
+.bm-role ul.points { color: var(--fg); }
+.bm-link { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; background: var(--fg); color: #fff; border-radius: 8px; font-weight: 600; font-size: 14px; transition: background 0.2s; }
+.bm-link:hover { background: var(--accent); color: #fff; }
+
+/* ---------- BILINGUAL (EN / KO) ---------- */
+body.ko { word-break: keep-all; overflow-wrap: break-word; }
+[data-ko] { display: none !important; }
+body.ko [data-en] { display: none !important; }
+body.ko [data-ko] { display: revert !important; }
+
+@media (max-width: 1100px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .inv-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  nav { padding: 16px 5vw; }
+  .nav-links { display: none; }
+  .hero-inner { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 30px; }
+  .hero-text { min-height: auto; align-items: center; }
+  .hero-image-container { order: -1; width: 260px; height: 340px; }
+  .hero-copy { min-height: auto; align-items: center; text-align: center; margin-top: 10px; }
+  .hero-actions { justify-content: center; }
+  section { padding: 80px 5vw; }
+  .inv-grid, .brands, .lang-grid, .cert-grid { grid-template-columns: 1fr; }
+  .inv { padding: 32px 26px; }
+  .inv.featured { padding: 32px 26px; }
+  .inv.featured ul.points { columns: 1; }
+  .item { grid-template-columns: 1fr; gap: 10px; }
+  .cert { min-height: 170px; }
+  .bm-body { padding: 30px 24px; }
+  footer .wrap { flex-direction: column; align-items: flex-start; }
+  .footer-contact { text-align: left; }
+}
+@media (max-width: 520px) {
+  .stats { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="#top">HA.</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#investment"><span data-en>Investment</span><span data-ko>투자 경험</span></a>
+      <a href="#experience"><span data-en>Experience</span><span data-ko>실무 경험</span></a>
+      <a href="#leadership"><span data-en>Leadership</span><span data-ko>리더십</span></a>
+      <a href="#languages"><span data-en>Languages</span><span data-ko>외국어</span></a>
+      <a href="#certifications"><span data-en>Certifications</span><span data-ko>자격증</span></a>
+    </div>
+    <a class="nav-cta" href="Hyunsoo_Ahn_Resume.pdf" target="_blank" rel="noopener"><span data-en>Resume ↓</span><span data-ko>이력서 ↓</span></a>
+  </div>
+</nav>
+
+<button class="lang-switch" id="langSwitch" type="button">한국어</button>
+
+<main id="top">
+<!-- ================= HERO ================= -->
+<section class="hero" style="border-top:0">
+  <div class="hero-inner reveal">
+    <div class="hero-text">
+      <div class="eyebrow">Asset Management · Macro Strategy · Global Markets</div>
+      <h1 data-en>HYUNSOO<br>AHN</h1>
+      <h1 data-ko>안현수</h1>
+      <div class="hero-sub">
+        <span data-en>Yonsei University, BBA · GPA 3.97 / 4.50<br>Expected Graduation Aug 2027</span>
+        <span data-ko>연세대학교 경영학과 · GPA 3.97 / 4.50<br>2027년 8월 졸업 예정</span>
+      </div>
+    </div>
+    <div class="hero-image-container">
+      <img src="profile.jpg" alt="Hyunsoo Ahn">
+    </div>
+    <div class="hero-copy">
+      <div class="hero-copy-text">
+        <span data-en>A macro-driven, multi-asset investor in the making. I designed the asset allocation for an NGO’s initial capital, led my team to the <strong>top 5% of 933 teams</strong> in a national investment competition, and kept competing even during military service. I work natively in Korean and English, and fluently in Mandarin.</span>
+        <span data-ko>거시경제를 출발점으로 자산배분 전략을 세우는 멀티에셋 투자자를 목표로 하고 있습니다. NGO 초기 자본금의 자산배분을 직접 설계했고, 전국 대학생 투자대회에서 팀을 이끌어 <strong>933개 팀 중 상위 5%</strong>를 기록했습니다. 군 복무 중에도 투자대회에 참가했습니다. 한국어·영어는 원어민 수준, 중국어는 HSK 6급입니다.</span>
+      </div>
+      <div class="hero-actions">
+        <a href="https://www.linkedin.com/in/hyunsoo-ahn-4a975a296" target="_blank" rel="noopener" class="btn btn-linkedin">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.750-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn
+        </a>
+        <a href="Hyunsoo_Ahn_Resume.pdf" target="_blank" rel="noopener" class="btn btn-dark"><span data-en>View Resume (PDF)</span><span data-ko>이력서 보기 (PDF)</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll">Scroll to explore ↓</div>
+</section>
+
+<!-- ================= 01 AT A GLANCE ================= -->
+<section id="highlights">
+<div class="wrap reveal">
+  <div class="section-head">
+    <div>
+      <div class="section-num"><span data-en>01 / AT A GLANCE</span><span data-ko>01 / 핵심 성과</span></div>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat">
+      <div class="num">Top 5%</div>
+      <div class="label"><span data-en>50th of 933 teams</span><span data-ko>933개 팀 중 50위</span></div>
+      <div class="sub"><span data-en>12th DB GAPS Investment Competition · Team Leader</span><span data-ko>제12회 DB GAPS 투자대회 · 팀장</span></div>
+    </div>
+    <div class="stat">
+      <div class="num">₩5M</div>
+      <div class="label"><span data-en>NGO capital allocated</span><span data-ko>NGO 자본금 자산배분</span></div>
+      <div class="sub"><span data-en>4 asset classes · 15% liquidity buffer</span><span data-ko>4개 자산군 · 유동성 버퍼 15%</span></div>
+    </div>
+    <div class="stat">
+      <div class="num">12%<small>/ 7%</small></div>
+      <div class="label"><span data-en>Annualized return / volatility</span><span data-ko>연환산 수익률 / 변동성</span></div>
+      <div class="sub"><span data-en>3-year Excel backtest · 15% max drawdown</span><span data-ko>3년 엑셀 백테스트 · 최대낙폭 15%</span></div>
+    </div>
+    <div class="stat">
+      <div class="num">3</div>
+      <div class="label"><span data-en>Working languages</span><span data-ko>업무 가능 언어</span></div>
+      <div class="sub"><span data-en>Korean · English (TOEFL 108) · Mandarin (HSK 6)</span><span data-ko>한국어 · 영어 (TOEFL 108) · 중국어 (HSK 6)</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ================= 02 INVESTMENT EXPERIENCE ================= -->
+<section id="investment">
+<div class="wrap reveal">
+  <div class="section-head">
+    <div>
+      <div class="section-num"><span data-en>02 / INVESTMENT EXPERIENCE</span><span data-ko>02 / 투자 경험</span></div>
+      <h2 class="section-title"><span data-en>Top-down. Risk-aware. Measured.</span><span data-ko>탑다운으로 판단하고, 리스크로 검증합니다.</span></h2>
+    </div>
+  </div>
+
+  <div class="inv-grid">
+    <!-- 12th DB GAPS (featured) -->
+    <article class="inv featured">
+      <div class="tag">Competition · May – Sep 2026</div>
+      <h3><span data-en>12th DB GAPS Investment Competition</span><span data-ko>제12회 DB GAPS 투자대회</span></h3>
+      <div class="meta"><span data-en><b>Team Leader</b> · 3-person team</span><span data-ko><b>팀장</b> · 3인 팀</span></div>
+      <div class="chips">
+        <span class="chip">50th / 933 teams</span>
+        <span class="chip">Top 5%</span>
+        <span class="chip"><span data-en>7 rebalances</span><span data-ko>리밸런싱 7회</span></span>
+        <span class="chip"><span data-en>Monthly reports</span><span data-ko>월간 운용보고서</span></span>
+      </div>
+      <ul class="points" data-en>
+        <li>Ranked <strong>50th of 933 teams (top 5%)</strong> leading a top-down ETF allocation across Korean equity, sector, commodity, short-term bond, and rate-linked ETFs, driven by rate-cycle and liquidity signals.</li>
+        <li>Rebalanced the portfolio <strong>7 times</strong> as interest-rate, fixed-income, and geopolitical conditions shifted.</li>
+        <li>Authored <strong>monthly portfolio reports</strong> on global rate direction, bond markets, and geopolitical risk premiums from conflicts and political instability.</li>
+        <li>Used short-term bond and rate-linked ETFs to manage downside exposure during periods of elevated macro volatility.</li>
+      </ul>
+      <ul class="points" data-ko>
+        <li>국내 주식·섹터·원자재·초단기채·금리연계형 ETF를 활용해 금리 사이클과 유동성 신호에 기반한 탑다운 자산배분을 총괄하며 <strong>933개 팀 중 50위(상위 5%)</strong>를 기록했습니다.</li>
+        <li>금리·채권시장·지정학적 환경 변화에 맞춰 포트폴리오를 <strong>7차례 리밸런싱</strong>했습니다.</li>
+        <li>글로벌 금리 방향성, 채권시장, 전쟁과 정치 불안에 따른 지정학적 리스크 프리미엄을 분석한 <strong>월간 운용보고서</strong>를 작성했습니다.</li>
+        <li>거시 변동성이 커진 구간에서는 초단기채와 금리연계형 ETF 비중을 활용해 하방 노출을 관리했습니다.</li>
+      </ul>
+      <button class="text-btn" type="button" onclick="openCertModal('db-gaps.jpg')"><span data-en>View certificate →</span><span data-ko>수상 증빙 보기 →</span></button>
+    </article>
+
+    <!-- Waving Hands -->
+    <article class="inv">
+      <div class="tag">Asset Allocation · May 2026 – Present</div>
+      <h3>Waving Hands</h3>
+      <div class="meta"><span data-en><b>Head of Asset Management</b> · NGO</span><span data-ko><b>자산운용 총괄</b> · 비영리 NGO</span></div>
+      <div class="chips">
+        <span class="chip">KRW 5M</span>
+        <span class="chip"><span data-en>4 asset classes</span><span data-ko>4개 자산군</span></span>
+        <span class="chip"><span data-en>15% liquidity buffer</span><span data-ko>유동성 버퍼 15%</span></span>
+      </div>
+      <ul class="points" data-en>
+        <li>Allocated the NGO’s <strong>KRW 5M</strong> initial capital across <strong>4 asset classes</strong> using historical return and volatility analysis, sizing weights to keep a <strong>15% liquidity buffer</strong> for operations.</li>
+        <li>Backtested the allocation over <strong>3 years in Excel</strong>: <strong>12%</strong> annualized return, <strong>7%</strong> volatility, <strong>15%</strong> max drawdown.</li>
+        <li>Codified the results into the NGO’s written investment policy and rebalancing guidelines.</li>
+      </ul>
+      <ul class="points" data-ko>
+        <li>자산별 과거 수익률과 변동성을 분석해 NGO 초기 자본금 <strong>500만 원</strong>을 <strong>4개 자산군</strong>에 배분하고, 운영자금을 위해 <strong>15%의 유동성 버퍼</strong>를 확보하도록 비중을 설정했습니다.</li>
+        <li>엑셀로 <strong>3년간 백테스트</strong>를 수행해 연환산 수익률 <strong>12%</strong>, 변동성 <strong>7%</strong>, 최대낙폭 <strong>15%</strong>를 확인했습니다.</li>
+        <li>결과를 바탕으로 NGO의 투자정책과 리밸런싱 가이드라인을 문서화했습니다.</li>
+      </ul>
+      <button class="text-btn" type="button" onclick="openBrandModal('waving-hands')"><span data-en>About the organization →</span><span data-ko>단체 소개 및 상세 보기 →</span></button>
+    </article>
+
+    <!-- 11th DB GAPS -->
+    <article class="inv">
+      <div class="tag">Competition · May – Oct 2025</div>
+      <h3><span data-en>11th DB GAPS Investment Competition</span><span data-ko>제11회 DB GAPS 투자대회</span></h3>
+      <div class="meta"><span data-en><b>Team Leader</b> · 3-person team · during military service</span><span data-ko><b>팀장</b> · 3인 팀 · 군 복무 중 참가</span></div>
+      <div class="chips">
+        <span class="chip"><span data-en>Top-down macro</span><span data-ko>탑다운 매크로</span></span>
+        <span class="chip"><span data-en>Supply-chain analysis</span><span data-ko>공급망 분석</span></span>
+      </div>
+      <ul class="points" data-en>
+        <li>Led a 3-person team <strong>while on active military duty</strong>.</li>
+        <li>Identified equity opportunities by tracing how weather, geopolitical, and economic shocks propagate through commodities, global supply chains, and corporate earnings.</li>
+        <li>Applied the ripple-effect framework from <em>If It’s Raining in Brazil, Buy Starbucks</em> to turn macro events into investment theses.</li>
+      </ul>
+      <ul class="points" data-ko>
+        <li><strong>현역 군 복무 중</strong> 3인 팀의 팀장으로 참가했습니다.</li>
+        <li>기후·지정학·경제 충격이 원자재, 글로벌 공급망, 기업 실적으로 이어지는 경로를 추적해 투자 기회를 발굴했습니다.</li>
+        <li>『브라질에 비가 내리면 스타벅스를 사라』의 파급효과 프레임워크를 적용해 거시 이벤트를 투자 가설로 연결했습니다.</li>
+      </ul>
+    </article>
+
+    <!-- Yongguel / 연끌 -->
+    <article class="inv">
+      <div class="tag">Investment Club · Sep 2026 – Present</div>
+      <h3><span data-en>Yongguel Investment Club</span><span data-ko>연세대 투자동아리 연끌</span></h3>
+      <div class="meta"><span data-en><b>Member · Mock Investment Team Leader</b> · UIC-affiliated</span><span data-ko><b>부원 · 모의투자 조장</b> · UIC 산하</span></div>
+      <div class="chips">
+        <span class="chip"><span data-en>Kiwoom Securities mock investment</span><span data-ko>키움증권 모의투자</span></span>
+        <span class="chip"><span data-en>Weekly sessions</span><span data-ko>주간 세션</span></span>
+      </div>
+      <ul class="points" data-en>
+        <li>Lead a team in the club’s <strong>Kiwoom Securities</strong> student mock investment competition, analyzing domestic and global equities and setting the team’s portfolio strategy.</li>
+        <li>Present and debate stock and macro ideas in weekly thematic sessions, stress-testing investment theses against actual market moves.</li>
+      </ul>
+      <ul class="points" data-ko>
+        <li>동아리 내 <strong>키움증권</strong> 대학생 모의투자에서 조장을 맡아 국내외 주식을 분석하고 팀의 포트폴리오 전략을 수립하고 있습니다.</li>
+        <li>매주 테마 토론과 주식·경제 발표에 참여하며, 투자 가설을 실제 시장 움직임과 비교해 검증하고 있습니다.</li>
+      </ul>
+    </article>
+  </div>
+</div>
+</section>
+
+<!-- ================= 03 PROFESSIONAL EXPERIENCE ================= -->
+<section id="experience">
+<div class="wrap reveal">
+  <div class="section-head">
+    <div>
+      <div class="section-num"><span data-en>03 / PROFESSIONAL EXPERIENCE</span><span data-ko>03 / 실무 경험</span></div>
+    </div>
+    <p class="section-note"><span data-en>Click a card for details.</span><span data-ko>카드를 누르면 상세 내용을 볼 수 있습니다.</span></p>
+  </div>
+  <div class="brands">
+    <button class="brand" type="button" onclick="openBrandModal('kuration')">
+      <div class="brand-img-wrap"><img src="kuration-logo.png" alt="Kuration logo"></div>
+      <div class="brand-text-wrap">
+        <div class="brand-top"><span class="brand-name">Kuration</span><span class="brand-date">Aug 2026 – Present</span></div>
+        <div class="brand-role"><span data-en>Co-Founder & E-Commerce Manager</span><span data-ko>공동 창업자 · 이커머스 총괄</span></div>
+        <div class="brand-line"><span data-en>Cross-border e-commerce for Korean fashion brands. Built payment, settlement, and checkout infrastructure supporting sales to <b>56 countries</b>.</span><span data-ko>한국 패션 브랜드를 위한 크로스보더 이커머스. <b>56개국</b> 판매를 지원하는 결제·정산·체크아웃 인프라를 구축했습니다.</span></div>
+        <span class="brand-more"><span data-en>View details →</span><span data-ko>상세 보기 →</span></span>
+      </div>
+    </button>
+    <button class="brand" type="button" onclick="openBrandModal('zeroxflow')">
+      <div class="brand-img-wrap"><img src="zeroxflow-logo.png" alt="ZEROXFLOW logo"></div>
+      <div class="brand-text-wrap">
+        <div class="brand-top"><span class="brand-name">ZEROXFLOW</span><span class="brand-date">Jun – Sep 2024</span></div>
+        <div class="brand-role"><span data-en>English Content Manager Intern</span><span data-ko>영문 콘텐츠 매니저 인턴</span></div>
+        <div class="brand-line"><span data-en>Localized <b>200+</b> video assets for clients including Disney; generated <b>11</b> on-site registrations at the Korea Education Expo.</span><span data-ko>디즈니 등 고객사의 영상 <b>200개 이상</b>을 번역·검수했고, 대한민국교육박람회에서 현장 등록 <b>11건</b>을 이끌어냈습니다.</span></div>
+        <span class="brand-more"><span data-en>View details →</span><span data-ko>상세 보기 →</span></span>
+      </div>
+    </button>
+  </div>
+</div>
+</section>
+
+<!-- ================= 04 LEADERSHIP & SERVICE ================= -->
+<section id="leadership">
+<div class="wrap reveal">
+  <div class="section-head">
+    <div>
+      <div class="section-num"><span data-en>04 / LEADERSHIP &amp; MILITARY SERVICE</span><span data-ko>04 / 리더십 · 병역</span></div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="item">
+      <div class="date">OCT 2024 — APR 2026</div>
+      <div>
+        <div class="role"><span data-en>Sergeant</span><span data-ko>병장 만기 전역</span></div>
+        <div class="org"><span data-en>Republic of Korea Army</span><span data-ko>대한민국 육군</span></div>
+        <div class="desc" data-en>Received the Division Commander’s Commendation for exemplary leadership during basic military training. Led a team in the 11th DB GAPS Investment Competition while serving.</div>
+        <div class="desc" data-ko>신병 교육 기간 중 모범적인 리더십을 인정받아 사단장 표창을 받았습니다. 복무 중에도 제11회 DB GAPS 투자대회에 팀장으로 참가했습니다.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">AUG 2023 — AUG 2024</div>
+      <div>
+        <div class="role"><span data-en>Executive Board Member, Planning</span><span data-ko>기획부 집행부원</span></div>
+        <div class="org">Yonsei International Korean Union (YIKU)</div>
+        <div class="desc" data-en>Planned and executed 7 cultural and networking events, growing active membership from 75 to 115 (+53% YoY). Ran events end to end, from planning through execution and member engagement, for students from diverse backgrounds.</div>
+        <div class="desc" data-ko>문화·네트워킹 행사 7건을 기획하고 운영해 활동 회원 수를 전년 75명에서 115명으로 53% 늘렸습니다. 기획부터 운영, 회원 관리까지 전 과정을 맡아 다양한 배경의 학생들이 교류하는 커뮤니티를 만들었습니다.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ================= 05 LANGUAGES ================= -->
+<section id="languages">
+<div class="wrap reveal">
+  <div class="section-head">
+    <div>
+      <div class="section-num"><span data-en>05 / LANGUAGES</span><span data-ko>05 / 외국어 역량</span></div>
+    </div>
+  </div>
+  <div class="lang-grid">
+    <div class="lang"><div class="big">한국어</div><div class="level"><span data-en>Native</span><span data-ko>모국어</span></div><p>Korean</p></div>
+    <div class="lang"><div class="big">English</div><div class="level"><span data-en>Native</span><span data-ko>원어민 수준</span></div><p>TOEFL iBT 108 · TOEIC 930</p></div>
+    <div class="lang"><div class="big">中文</div><div class="level"><span data-en>Fluent</span><span data-ko>유창</span></div><p>HSK 6</p></div>
+  </div>
+</div>
+</section>
+
+<!-- ================= 06 CERTIFICATIONS ================= -->
+<section id="certifications">
+<div class="wrap reveal">
+  <div class="section-head">
+    <div>
+      <div class="section-num"><span data-en>06 / CERTIFICATIONS</span><span data-ko>06 / 자격증</span></div>
+    </div>
+  </div>
+  <div class="cert-grid">
+    <button class="cert" type="button" onclick="openCertModal('openai-cert1.jpg')">
+      <span class="cert-index">01</span><div><h3>Agents and<br>Workflows</h3><p>OpenAI · AUG 2026</p></div>
+    </button>
+    <button class="cert" type="button" onclick="openCertModal('openai-cert2.jpg')">
+      <span class="cert-index">02</span><div><h3>Applied AI<br>Foundations</h3><p>OpenAI · AUG 2026</p></div>
+    </button>
+    <button class="cert" type="button" onclick="openCertModal('openai-cert3.jpg')">
+      <span class="cert-index">03</span><div><h3>AI<br>Foundations</h3><p>OpenAI · AUG 2026</p></div>
+    </button>
+  </div>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+  <div><div class="eyebrow">Hyunsoo Ahn</div><h2 data-en>Let's connect.</h2><h2 data-ko>함께 이야기 나눠요.</h2></div>
+  <div class="footer-contact">
+    <span data-en>Seoul, Republic of Korea</span><span data-ko>대한민국 서울</span><br>
+    <a href="mailto:ahnhs4@gmail.com">ahnhs4@gmail.com</a><br>
+    <a href="https://www.linkedin.com/in/hyunsoo-ahn-4a975a296" target="_blank" rel="noopener">LinkedIn ↗</a> ·
+    <a href="Hyunsoo_Ahn_Resume.pdf" target="_blank" rel="noopener"><span data-en>Resume (PDF) ↗</span><span data-ko>이력서 (PDF) ↗</span></a>
+  </div>
+</div>
+</footer>
+</main>
+
+<!-- Image modal (certificates) -->
+<div id="certModal" class="modal" onclick="closeModal('certModal')">
+  <div class="modal-content-img" onclick="event.stopPropagation()">
+    <button class="close-modal" type="button" aria-label="Close" onclick="closeModal('certModal')">&times;</button>
+    <img id="certImage" src="" alt="Certificate">
+  </div>
+</div>
+
+<!-- Detail modal -->
+<div id="brandDetailModal" class="modal" onclick="closeModal('brandDetailModal')">
+  <div class="modal-content-brand" onclick="event.stopPropagation()">
+    <button class="close-modal" type="button" aria-label="Close" onclick="closeModal('brandDetailModal')">&times;</button>
+
+    <!-- Waving Hands -->
+    <div id="modal-waving-hands" class="brand-detail" style="display:none;">
+      <div class="bm-hero"><img src="waving-hands.png" alt="Waving Hands logo"></div>
+      <div class="bm-body">
+        <h2>Waving Hands</h2>
+        <div class="bm-meta"><span data-en>Head of Asset Management · May 2026 – Present</span><span data-ko>자산운용 총괄 · 2026.05 – 현재</span></div>
+        <div class="bm-desc">
+          <span data-en>A non-profit NGO project that documents the human cost of unsafe energy systems and advocates for safer, more sustainable energy. It is planning and implementing energy storage systems (ESS) on Deokjeokdo Island to deliver safe, sustainable power to underserved communities.</span>
+          <span data-ko>안전하지 않은 에너지 시스템이 초래하는 인명 피해와 사회적 문제를 기록하고 공론화하는 비영리(NGO) 프로젝트입니다. 에너지 인프라에서 소외된 지역에 안전하고 지속 가능한 전력을 공급하기 위해 덕적도에서 에너지 저장 시스템(ESS)을 기획·추진하고 있습니다.</span>
+        </div>
+        <div class="bm-role">
+          <h4><span data-en>What I did</span><span data-ko>담당 업무</span></h4>
+          <ul class="points" data-en>
+            <li>Set the mandate: prioritize liquidity and an appropriate risk-return profile over return maximization, reflecting the NGO’s mission and expected cash needs.</li>
+            <li>Allocated the <strong>KRW 5M</strong> initial capital across <strong>4 asset classes</strong> using historical return and volatility data, sizing weights to hold a <strong>15% liquidity buffer</strong> and limit concentration risk.</li>
+            <li>Backtested the allocation over <strong>3 years in Excel</strong> (<strong>12%</strong> annualized return, <strong>7%</strong> volatility, <strong>15%</strong> max drawdown) and reviewed how it behaved across different market environments.</li>
+            <li>Refined the final weights and codified them into the NGO’s written investment policy and rebalancing guidelines.</li>
+          </ul>
+          <ul class="points" data-ko>
+            <li>NGO의 활동 목적과 향후 자금 수요를 반영해, 수익률 극대화보다 유동성 확보와 적정한 위험·수익 구조를 우선하는 운용 원칙을 세웠습니다.</li>
+            <li>자산별 과거 수익률·변동성 데이터를 바탕으로 초기 자본금 <strong>500만 원</strong>을 <strong>4개 자산군</strong>에 배분하고, <strong>15%의 유동성 버퍼</strong>를 확보하면서 특정 자산 쏠림을 줄이도록 비중을 설정했습니다.</li>
+            <li>엑셀로 <strong>3년간 백테스트</strong>를 수행해 연환산 수익률 <strong>12%</strong>, 변동성 <strong>7%</strong>, 최대낙폭 <strong>15%</strong>를 확인하고, 시장 국면별 성과를 점검했습니다.</li>
+            <li>결과를 반영해 최종 비중을 조정하고 투자정책과 리밸런싱 가이드라인을 문서화했습니다.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kuration -->
+    <div id="modal-kuration" class="brand-detail" style="display:none;">
+      <div class="bm-hero"><img src="kuration-logo.png" alt="Kuration logo"></div>
+      <div class="bm-body">
+        <h2>Kuration</h2>
+        <div class="bm-meta"><span data-en>Co-Founder & E-Commerce Manager · Aug 2026 – Present</span><span data-ko>공동 창업자 · 이커머스 총괄 · 2026.08 – 현재</span></div>
+        <div class="bm-desc">
+          <span data-en>A cross-border e-commerce platform that curates promising Korean fashion brands for international customers.</span>
+          <span data-ko>잠재력 있는 국내 패션 브랜드를 발굴해 해외 소비자에게 소개하는 크로스보더 이커머스 플랫폼입니다.</span>
+        </div>
+        <div class="bm-role">
+          <h4><span data-en>What I did</span><span data-ko>담당 업무</span></h4>
+          <ul class="points" data-en>
+            <li>Set up payment, settlement, and checkout infrastructure (PayPal) supporting cross-border sales to <strong>56 countries</strong>, and compared alternative payment providers on setup cost, transaction fees, and scalability.</li>
+            <li>Designed, built, and launched the Shopify storefront and UX end to end using AI-assisted development, covering product curation, catalog structure, customer management, and operating workflows.</li>
+            <li>Sourced Korean fashion brand partners and drafted the partnership agreements for the initial brand portfolio.</li>
+            <li>Run Instagram and TikTok content to build early international awareness.</li>
+          </ul>
+          <ul class="points" data-ko>
+            <li>PayPal 기반의 결제·정산·체크아웃 인프라를 구축해 <strong>56개국</strong> 판매를 지원하고, 도입 비용·결제 수수료·확장성을 기준으로 대체 결제 솔루션을 비교·검토했습니다.</li>
+            <li>AI 기반 개발 도구로 Shopify 스토어와 UX를 직접 설계·구축·출시했으며, 상품 큐레이션·카탈로그 구성·고객 관리·운영 프로세스를 설계했습니다.</li>
+            <li>국내 패션 브랜드 파트너를 발굴하고 초기 입점을 위한 협업 계약서를 직접 작성했습니다.</li>
+            <li>Instagram과 TikTok 콘텐츠를 기획·운영하며 초기 해외 인지도를 쌓고 있습니다.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ZEROXFLOW -->
+    <div id="modal-zeroxflow" class="brand-detail" style="display:none;">
+      <div class="bm-hero"><img src="zeroxflow-logo.png" alt="ZEROXFLOW logo"></div>
+      <div class="bm-body">
+        <h2>ZEROXFLOW</h2>
+        <div class="bm-meta"><span data-en>English Content Manager Intern · Jun – Sep 2024</span><span data-ko>영문 콘텐츠 매니저 인턴 · 2024.06 – 2024.09</span></div>
+        <div class="bm-desc">
+          <span data-en>A startup specializing in English content production and localization.</span>
+          <span data-ko>영문 콘텐츠 제작과 현지화(로컬라이제이션)를 전문으로 하는 스타트업입니다.</span>
+        </div>
+        <div class="bm-role">
+          <h4><span data-en>What I did</span><span data-ko>담당 업무</span></h4>
+          <ul class="points" data-en>
+            <li>Translated and quality-checked <strong>200+</strong> English video assets for clients including Disney.</li>
+            <li>As the only intern assigned to sales at the Korea Education Expo, pitched to academies and teachers face to face, generating <strong>11 on-site registrations</strong>.</li>
+          </ul>
+          <ul class="points" data-ko>
+            <li>디즈니 등 고객사의 영문 영상 콘텐츠 <strong>200개 이상</strong>을 번역하고 품질을 검수했습니다.</li>
+            <li>대한민국교육박람회에서 현장 영업을 맡은 유일한 인턴으로 학원·교사를 대상으로 제품을 직접 피칭해 <strong>현장 등록 11건</strong>을 이끌어냈습니다.</li>
+          </ul>
+        </div>
+        <a href="https://www.zeroxflow.com/" class="bm-link" target="_blank" rel="noopener"><span data-en>Visit Website ↗</span><span data-ko>웹사이트 방문하기 ↗</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Reveal on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+}, { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Language toggle (remembers choice; ?lang=ko also works)
+const langBtn = document.getElementById('langSwitch');
+function setLang(lang) {
+  const ko = lang === 'ko';
+  document.body.classList.toggle('ko', ko);
+  document.documentElement.lang = ko ? 'ko' : 'en';
+  langBtn.textContent = ko ? 'EN' : '한국어';
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+}
+(function initLang() {
+  let lang = new URLSearchParams(location.search).get('lang');
+  if (!lang) { try { lang = localStorage.getItem('lang'); } catch (e) {} }
+  setLang(lang === 'ko' ? 'ko' : 'en');
+})();
+langBtn.addEventListener('click', () => setLang(document.body.classList.contains('ko') ? 'en' : 'ko'));
+
+// Modals
+function openCertModal(imageSrc) {
+  document.getElementById('certImage').src = imageSrc;
+  document.getElementById('certModal').classList.add('show-modal');
+  document.body.style.overflow = 'hidden';
+}
+function openBrandModal(brandId) {
+  document.querySelectorAll('.brand-detail').forEach(el => el.style.display = 'none');
+  document.getElementById('modal-' + brandId).style.display = 'block';
+  const modal = document.getElementById('brandDetailModal');
+  modal.classList.add('show-modal');
+  modal.querySelector('.modal-content-brand').scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(modalId) {
+  document.getElementById(modalId).classList.remove('show-modal');
+  if (modalId === 'certModal') document.getElementById('certImage').src = '';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('.modal.show-modal').forEach(m => closeModal(m.id));
+});
+</script>
+</body>
+</html>
